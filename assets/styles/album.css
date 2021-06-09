@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Homeday';
+  src: url('Homeday.ttf') format('truetype');
+}
+:root{
+  --main:#efabb2;
+  --soft:#ffe6e6;
+  --white:#f4f4f2;
+  --line:repeating-linear-gradient(90deg, rgba(162,159,159, 0.06) 0px, rgba(162,159,159, 0.06) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(162,159,159, 0.06) 0px, rgba(162,159,159, 0.06) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, rgba(146,146,146, 0.09) 0px, rgba(146,146,146, 0.09) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(90deg, rgba(146,146,146, 0.09) 0px, rgba(146,146,146, 0.09) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, rgb(239, 171, 178),rgb(239, 171, 178));
+}
+body{
+  overflow-x:hidden;
+}
+.collapse, .navbar, .jumbotron{
+  background-image: var(--line);
+  box-shadow:none;
+} 
+h1 {
+  font-weight: 300;
+  color:var(--main);
+  font-family:"Homeday";
+}
+.jumbotron .container {
+  max-width: 40rem;
+  padding:5%;
+  background:var(--white);
+}
+main{
+  display:flex;
+  flex-direction:column;
+}
+.btn{
+  transition:0.5s;
+  padding:10px;
+  border:none;
+}
+.btn-main, ::-webkit-scrollbar-thumb{
+  background:var(--main);
+}
+.btn-second, .album{
+  background:var(--soft);
+}
+.btn:hover{
+  transform: scale(1.2,1.2);
+  font-weight:700;
+}
+.card-body{
+  background:url('../img/white.jpg');
+}
+.separator img{
+  margin-top:-8em;
+  width:34%;
+}
+.btn-group{
+  border:1px solid var(--main);
+  border-radius:6px;
+}
+.close-btn{
+  border:none;
+  margin:-20px 10px;
+  padding:10px;
+  float: right;
+  font-weight: 700;
+  line-height: 1;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.dragable {
+  position: absolute;
+  z-index: 9;
+  width:15em;
+  transform:rotate(45deg);
+  cursor: pointer;
+}
+#news,#stamp{
+  left:-8em;
+}
+#flower, #post{
+  right:-8em;
+  top:15em;
+  transform:rotate(-45deg);
+}
+#stamp{
+  top:50em;
+}
+#post{
+  top:80em;
+}
+footer {
+  background:var(--soft);
+}
+/* simple animation  */
+.scroll-ani, .card{
+  transition:0.5s;
+  opacity:0;
+}
+.scroll-ani[data-scroll="in"], .card[data-scroll="in"]{
+  opacity:1;
+  transition-delay:0.2s;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+@media screen and (max-width: 768px) {
+  .jumbotron .btn{
+    display:block;
+  }
+  .jumbotron, footer{
+    margin-top:-2rem
+  }
+  .dragable{
+    display:none;
+  }
+  main{
+    flex-direction:column-reverse;
+  }
+  .card{
+    opacity:1;
+  }
+  .separator img{
+    margin-top:0em;
+    transform: rotate(180deg);
+  }
+  footer{
+    background:var(--line);
+  }
+}
